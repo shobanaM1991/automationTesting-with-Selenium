@@ -32,6 +32,7 @@ class LoginTest(unittest.TestCase):
         homeObj.click_onLogout()        
 
         time.sleep(2) 
+        jnuih
 
     def test_02_login_valid(self):
         driver = self.driver

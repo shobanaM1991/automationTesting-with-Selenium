@@ -1,0 +1,6 @@
+venv
+.vscode
+Rport/Test*
+Tests/__pycache__
+pages/__pycache__
+Locators/__pycache__

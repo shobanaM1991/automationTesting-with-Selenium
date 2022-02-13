@@ -1,20 +1,23 @@
-import os, sys
-sys.path.insert(1, r'E:\MachineLearning\selenium_automation_tests\testcase_unittest\POM_ProjectDemo\pages')
+
+import os
+import time
+import unittest
+
+import HtmlTestRunner
+import selenium
+
+from pages.test_homepage import HomePage
+from pages.test_loginpage import LoginPage
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import unittest
-import time
-import HtmlTestRunner
-
-from test_loginpage import LoginPage
-from test_homepage import HomePage
 
 
 class LoginTest(unittest.TestCase):
 
     @classmethod
     def setUp(cls):
-        cls.driver = webdriver.Chrome(executable_path= r'C:\Users\Dhinesh\Desktop\chromedriver_win32\chromedriver')
+        cls.driver = webdriver.Chrome(
+            executable_path=r'C:\Users\Dhinesh\Desktop\chromedriver_win32\chromedriver')
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
@@ -29,10 +32,9 @@ class LoginTest(unittest.TestCase):
 
         homeObj = HomePage(driver)
         homeObj.click_welcome()
-        homeObj.click_onLogout()        
+        homeObj.click_onLogout()
 
-        time.sleep(2) 
-        jnuih
+        time.sleep(2)
 
     def test_02_login_valid(self):
         driver = self.driver
@@ -43,9 +45,9 @@ class LoginTest(unittest.TestCase):
         loginobj.enter_password("admin123")
         loginobj.click_loginbutton()
         message = loginobj.check_invalid_username()
-        self.assertEqual(message, "Invalid credentials")       
+        self.assertEqual(message, "Invalid credentials")
 
-        time.sleep(2) 
+        time.sleep(2)
 
     @classmethod
     def tearDown(cls):
@@ -53,5 +55,7 @@ class LoginTest(unittest.TestCase):
         cls.driver.close()
         print("Completed")
 
+
 if __name__ == "__main__":
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output = r'E:\MachineLearning\selenium_automation_tests\testcase_unittest\POM_ProjectDemo\Rport'))
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
+        output=r'E:\MachineLearning\selenium_automation_tests\testcase_unittest\POM_ProjectDemo\Rport'))

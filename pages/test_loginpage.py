@@ -1,7 +1,7 @@
-import os, sys
-sys.path.insert(1, r'E:\MachineLearning\selenium_automation_tests\testcase_unittest\POM_ProjectDemo\Locators')
+from Locators.test_locators import Locators
+import os
+import sys
 
-from test_locators import Locators
 
 class LoginPage():
 
@@ -16,11 +16,13 @@ class LoginPage():
 
     def enter_username(self, username):
         self.driver.find_element_by_id(self.username_textbox_id).clear()
-        self.driver.find_element_by_id(self.username_textbox_id).send_keys(username)
+        self.driver.find_element_by_id(
+            self.username_textbox_id).send_keys(username)
 
-    def enter_password(self, password): 
-        self.driver.find_element_by_id(self.password_textbox_id).clear() 
-        self.driver.find_element_by_id(self.password_textbox_id).send_keys(password)
+    def enter_password(self, password):
+        self.driver.find_element_by_id(self.password_textbox_id).clear()
+        self.driver.find_element_by_id(
+            self.password_textbox_id).send_keys(password)
 
     def click_loginbutton(self):
         self.driver.find_element_by_id(self.loginbutton_id).click()

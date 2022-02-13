@@ -1,13 +1,16 @@
 
 import os
 import time
-import unittest
-
 import HtmlTestRunner
+import unittest
+import sys
+
 import selenium
 
-from pages.test_homepage import HomePage
-from pages.test_loginpage import LoginPage
+
+from Pages.test_homepage import *
+from Pages.test_loginpage import *
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -17,7 +20,7 @@ class LoginTest(unittest.TestCase):
     @classmethod
     def setUp(cls):
         cls.driver = webdriver.Chrome(
-            executable_path=r'C:\Users\Dhinesh\Desktop\chromedriver_win32\chromedriver')
+            executable_path=r'C:\Users\dhine\Desktop\chromedriver')
         cls.driver.implicitly_wait(10)
         cls.driver.maximize_window()
 
@@ -58,4 +61,4 @@ class LoginTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(
-        output=r'E:\MachineLearning\selenium_automation_tests\testcase_unittest\POM_ProjectDemo\Rport'))
+        output=r'D:\Shobana\Projects\git-py-projects\OrangeORM\Rport'))

@@ -1,3 +1,3 @@
 @echo off
-python.exe Tests/test_login.py
+python.exe ./test_login.py
 pause
